@@ -1,0 +1,33 @@
+# Created by .ignore support plugin (hsz.mobi)
+!.idea
+build
+.gradle
+*.iml
+
+# User-specific stuff:
+**/.idea/dictionaries
+.idea/dictionaries
+**/.idea/workspace.xml
+.idea/workspace.xml
+**/.idea/uiDesigner.xml
+.idea/uiDesigner.xml
+**/.idea/tasks.xml
+.idea/tasks.xml
+**/.idea/shelf
+.idea/shelf
+# Gradle:
+**/.idea/gradle.xml
+.idea/gradle.xml
+**/.idea/libraries
+.idea/libraries
+# Sensitive or high-churn files:
+**/.idea/dataSources.ids
+.idea/dataSources.ids
+**/.idea/dataSources.local.xml
+.idea/dataSources.local.xml
+**/.idea/dataSources.xml
+.idea/dataSources.xml
+**/.idea/sqlDataSources.xml
+.idea/sqlDataSources.xml
+**/.idea/dynamic.xml
+.idea/dynamic.xml
