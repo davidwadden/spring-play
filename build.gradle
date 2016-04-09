@@ -1,0 +1,44 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.0.M1'
+	}
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+	}
+}
+
+configurations {
+	jaxb
+}
+
+apply plugin: 'spring-boot'
+apply from: "${projectDir}/gradle/genJaxb.gradle"
+
+jar {
+	baseName = 'demo'
+	version = '0.1.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-ws')
+	compile('org.projectlombok:lombok')
+	compile(files(genJaxb.classesDir).builtBy(genJaxb))
+
+	jaxb "com.sun.xml.bind:jaxb-xjc:2.1.7"
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.ws:spring-ws-test')
+}
